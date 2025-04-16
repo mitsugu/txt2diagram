@@ -1,0 +1,114 @@
+body {
+	width:80%;
+	margin-top:3em;
+	margin-bottom:3em;
+	margin-left:auto;
+	margin-right:auto;
+}
+h1 {
+  padding:0.5em 0em 0.5em 0.5em;
+  border-width:0px 0px 1px 5px;
+  border-style:solid;
+  border-color:silver;
+  line-height:1.25em;
+}
+h2 {
+  padding:0.5em 0em 0.5em 0.5em;
+  border-width:3px 0px 0px 0px;
+  border-style:solid;
+  border-color:silver;
+}
+h3 {
+  padding:0.5em 0em 0.5em 0.5em;
+  border-width:2px 0px 0px 0px;
+  border-style:solid;
+  border-color:silver;
+}
+p {
+  text-align:justify;
+  text-indent:1em;
+}
+p.no-indent {
+  text-indent:0em;
+}
+a.external:after {
+  content:url('link-icon_external.gif');
+}
+figcaption {
+	font-size: 0.7em;
+	margin-top:0em;
+	margin-bottom:0em;
+	color:gray;
+}
+.numbered-list {
+  list-style-type: none;
+  counter-reset: main-counter; /* 最上位のカウンタをリセット */
+}
+
+.main-level > li {
+  counter-increment: main-counter;
+}
+
+.main-level > li::before {
+  content: counter(main-counter) ".";
+  margin-right: 0.5em;
+}
+
+.sub-level {
+  counter-reset: sub-counter; /* 2階層目のカウンタをリセット */
+  margin-left: 2em;
+}
+
+.sub-level > li {
+  counter-increment: sub-counter;
+}
+
+.sub-level > li::before {
+  content: counter(main-counter) "." counter(sub-counter) ".";
+  margin-right: 0.5em;
+}
+
+.sub-sub-level {
+  counter-reset: sub-sub-counter; /* 3階層目のカウンタをリセット */
+  margin-left: 2em;
+}
+
+.sub-sub-level > li {
+  counter-increment: sub-sub-counter;
+}
+
+.sub-sub-level > li::before {
+  content: counter(main-counter) "." counter(sub-counter) "." counter(sub-sub-counter) ".";
+  margin-right: 0.5em;
+}
+
+.sub-sub-sub-level {
+  counter-reset: sub-sub-sub-counter; /* 4階層目のカウンタをリセット */
+  margin-left: 2em;
+}
+
+.sub-sub-sub-level > li {
+  counter-increment: sub-sub-sub-counter;
+}
+
+.sub-sub-sub-level > li::before {
+  content: counter(main-counter) "." counter(sub-counter) "." counter(sub-sub-counter) "." counter(sub-sub-sub-counter) ".";
+  margin-right: 0.5em;
+}
+
+.sub-sub-sub-sub-level {
+  counter-reset: sub-sub-sub-sub-counter; /* 5階層目のカウンタをリセット */
+  margin-left: 2em;
+}
+
+.sub-sub-sub-sub-level > li {
+  counter-increment: sub-sub-sub-sub-counter;
+}
+
+.sub-sub-sub-sub-level > li::before {
+  content: counter(main-counter) "." counter(sub-counter) "." counter(sub-sub-counter) "." counter(sub-sub-sub-counter) "." counter(sub-sub-sub-sub-counter) ".";
+  margin-right: 0.5em;
+}
+/*
+vim: ts=2 sw=2 noet
+*/

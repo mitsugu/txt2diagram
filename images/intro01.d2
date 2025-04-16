@@ -1,0 +1,33 @@
+direction: right
+sourcefile: ソースファイル\n(テキストファイル) {
+	shape: cylinder
+}
+
+destnationfile: "" {
+	shape: cylinder
+	imagetype: |md
+		　  
+		画像ファイル
+		* svg
+		* png
+		* jpg
+		* pdf
+		* etc\.\.\.  
+		(ツールやツールの設定による)
+	|
+}
+softwares: "" {
+	shape: rectangle
+	softs: |md
+		<h3 align="center"><b>ダイアグラムに変換</b></h3>
+		<hr />
+		<ul style="font-size:1.15em;">
+		<li>PlantUML</li>
+		<li>Graphviz</li>
+		<li>Marmaid.js</li>
+		<li>D2</li>
+		<li>etc...</li>
+		</ul>
+	|
+}
+sourcefile -> softwares -> destnationfile
