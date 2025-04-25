@@ -31,6 +31,9 @@ h3 {
   border-style:solid;
   border-color:silver;
 }
+dt {
+	font-weight:bold;
+}
 p {
   text-align:justify;
   text-indent:1em;
