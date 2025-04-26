@@ -119,6 +119,14 @@ figcaption {
   content: counter(main-counter) "." counter(sub-counter) "." counter(sub-sub-counter) "." counter(sub-sub-sub-counter) "." counter(sub-sub-sub-sub-counter) ".";
   margin-right: 0.5em;
 }
+blockquote.code {
+	background-color:lightgray;
+	border-radius: 10px;
+	padding-top:1px;
+	padding-bottom:1px;
+	padding-left: 1em;
+	padding-right: 1em;
+}
 /*
 vim: ts=2 sw=2 noet
 */

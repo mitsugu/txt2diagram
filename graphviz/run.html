@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# twitter: http://ogp.me/ns/twitter#">
+	<meta charset="UTF-8">
+	<title>テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - 実行方法</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="canonical" href="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+
+	<meta name="title" content="テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - 実行方法">
+	<meta name="description" content="GraphViz の実行方法">
+	<meta name="keywords" content="GraphViz">
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - 実行方法">
+	<meta property="og:description" content="GraphViz の実行方法">
+	<meta property="og:url" content="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+	<meta property="og:site_name" content="テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - 実行方法">
+	<meta property="og:html" content="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+	<!--
+  <meta property="og:image" content="https://i.imgur.com/jyZiVCY.jpg">
+  <meta property="og:image:width" content="340">
+  <meta property="og:image:height" content="512">
+  -->
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+
+	<link rel="stylesheet" type="text/css" href="../index.css">
+</head>
+<body>
+	<header>
+		<h1><span class="toptitle">テキストファイルから様々なダイアグラムを作成する - <span>GraphViz 編</span></span><br />実行方法</h1>
+	</header>
+	<section>
+		<h2>GraphViz の実行方法</h2>
+		<p>最も単純な実行方法のみ説明します。全てのコマンドライン・パラメータを知りたい場合は <a href="https://graphviz.org/" class="external" target="_blank">GraphViz の公式サイト</a>を参照してください。</p>
+		<dl>
+		<dt>png 画像に変換するとき</dt>
+		<dd>
+			<blockquote class="code">
+				<pre><code>dot -Tpng input.dot</code></pre>
+			</blockquote>
+		</dd>
+		<dt>svg 画像に変換するとき</dt>
+		<dd>
+			<blockquote class="code">
+				<pre><code>dot -Tsvg input.dot</code></pre>
+			</blockquote>
+		</dd>
+		</dl>
+		<p>GraphViz が出力可能な画像フォーマットは<a href="https://graphviz.org/docs/outputs/" class="external" target="_blank">公式サイトの出力フォーマットセクション</a>にリストされていますので参照してください。画像フォーマットによっては追加のライブラリのインストールが必要になる場合もあります。</li>
+	</section>
+	<footer>
+		<hr />
+		<a href="../index.html">戻る</a>
+	</footer>
+</body>
+</html>
+<!--
+vim: ts=2 sw=2 noet
+-->
