@@ -1,0 +1,5 @@
+digraph example03 {
+	n01 [shape=doubleoctagon, label="黄門様ご一行"];
+	n02 [shape=rectangle, label="悪代官's"];
+	n01 -> n02 [label="この紋所が目に入らぬかっ！！"];
+}

@@ -1,0 +1,3 @@
+graph example {
+	n01 [shape=doubleoctagon, label="黄門様ご一行"];
+}

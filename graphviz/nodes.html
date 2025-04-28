@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# twitter: http://ogp.me/ns/twitter#">
+	<meta charset="UTF-8">
+	<title>テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - ノード</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="canonical" href="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+
+	<meta name="title" content="テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - ノード">
+	<meta name="description" content="GraphViz のノード">
+	<meta name="keywords" content="GraphViz">
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - ノード">
+	<meta property="og:description" content="GraphViz のノード">
+	<meta property="og:url" content="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+	<meta property="og:site_name" content="テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - ノード">
+	<meta property="og:html" content="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+	<!--
+  <meta property="og:image" content="https://i.imgur.com/jyZiVCY.jpg">
+  <meta property="og:image:width" content="340">
+  <meta property="og:image:height" content="512">
+  -->
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+
+	<link rel="stylesheet" type="text/css" href="../index.css">
+</head>
+<body>
+	<header>
+		<h1><span class="toptitle">テキストファイルから様々なダイアグラムを作成する - <span>GraphViz 編</span></span><br />ノード</h1>
+	</header>
+	<section>
+		<h2>GraphViz のノード</h2>
+		<p>GraphViz の図はノードとエッジで構成されています。下の図を見てください。</p>
+		<figure>
+			<a href="images/nodes0001.svg" target="_blank"><img class="figure" width="256" src="images/nodes0001.svg"></a>
+			<figcaption>
+				<a href="images/nodes0001.gv" target="_blank">ソースファイル</a>
+			</figcaption>
+		</figure>
+		<p>上図の「黄門様ご一行」と書かれた八角形と「悪代官's」と書かれた長方形がノードです。また「この紋所が目に入らぬか！！」と書かれた矢印がエッジです。</p>
+		<p>GraphViz は以下のノードを描くことができます。</p>
+		<figure>
+			<a href="images/nodes0002.svg" target="_blank"><img class="figure" width="100%" src="images/nodes0002.svg"></a>
+			<figcaption>
+				<a href="images/nodes0002.gv" target="_blank">ソースファイル</a>
+			</figcaption>
+		</figure>
+		<p>ノードの書き方は以下のように書きます。</p>
+		<blockquote class="code">
+<pre><code>node_ID [shape="形状", label="表示テキスト", ....];</code></pre>
+		</blockquote>
+		<p>例えば「黄門様ご一行」と書かれた最初の八角形の例であれば以下のように書きます。</p>
+		<blockquote class="code">
+<pre><code>n01 [shape=doubleoctagon, label="黄門様ご一行"];</code></pre>
+		</blockquote>
+		<p>ここで n01 というノード ID をつけていますが、これは後でノードとノードをエッジでつなげるときに使います。</p>
+		<p>ノード ID は別のノード ID とダブってはいけません。ノード ID はノードを区別するためのノード固有の ID になります。他のノードと被ると GraphViz はそれらのノードの区別ができなくなってしまいます。</p>
+		<p>ノードの形状には &quot;doubleoctagon&quot; を指定し、表示する文字列には &quot;黄門様ご一行&quot; を指定しています。</p>
+		<p>&quot;黄門様ご一行&quot; ノードのみのダイアグラムを描く場合は以下のようにします。</p>
+		<blockquote class="code">
+<pre><code>graph example {
+	n01 [shape=doubleoctagon, label="黄門様ご一行"];
+}</code></pre>
+		</blockquote>
+		<p>それでは実際にダイアグラム化してみましょう。上記ソースファイル名を &quot;nodes0003.gv&quot; とした場合、以下のように GraphViz を実行します。GraphViz の実行ファイル名は dot です。</p>
+		<blockquote class="code">
+<pre><code>dot -Tsvg nodes0003.gv -o nodes0003.svg</code></pre>
+		</blockquote>
+		<p>生成されるダイアグラムは下図のようになります。</p>
+		<figure>
+			<a href="images/nodes0003.svg" target="_blank"><img class="figure" width="256" src="images/nodes0003.svg"></a>
+			<figcaption>
+				<a href="images/nodes0003.gv" target="_blank">ソースファイル</a>
+			</figcaption>
+		</figure>
+		<p>もし描きたいノードが ellipse でエッジが不要な場合だと、もっと簡単にソースファイルを書くことができます。</p>
+		<blockquote class="code">
+<pre><code>graph example {
+	"黄門様ご一行";
+}</code></pre>
+		</blockquote>
+		<p>生成されるダイアグラムは下図のようになります。</p>
+		<figure>
+			<a href="images/nodes0004.svg" target="_blank"><img class="figure" width="256" src="images/nodes0004.svg"></a>
+			<figcaption>
+				<a href="images/nodes0004.gv" target="_blank">ソースファイル</a>
+			</figcaption>
+		</figure>
+		<p>ソースファイルで「黄門様ご一行」という文字列をダブルコーテーションでくくっていますが、この文字列にはスペースが含まれていないので実はダブルコーテーションも不要です。</p>
+		<p>ノードは背景色を変えたり文字色を変えたりもできます。その方法については後述します。</p>
+	</section>
+	<footer>
+		<hr />
+		<a href="../index.html">戻る</a>
+	</footer>
+</body>
+</html>
+<!--
+vim: ts=2 sw=2 noet
+-->
