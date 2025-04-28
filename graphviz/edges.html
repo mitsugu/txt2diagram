@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# twitter: http://ogp.me/ns/twitter#">
+	<meta charset="UTF-8">
+	<title>テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - エッジ</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="canonical" href="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+
+	<meta name="title" content="テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - エッジ">
+	<meta name="description" content="GraphViz のエッジ">
+	<meta name="keywords" content="GraphViz">
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - エッジ">
+	<meta property="og:description" content="GraphViz のエッジ">
+	<meta property="og:url" content="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+	<meta property="og:site_name" content="テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - エッジ">
+	<meta property="og:html" content="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+	<!--
+  <meta property="og:image" content="https://i.imgur.com/jyZiVCY.jpg">
+  <meta property="og:image:width" content="340">
+  <meta property="og:image:height" content="512">
+  -->
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+
+	<link rel="stylesheet" type="text/css" href="../index.css">
+</head>
+<body>
+	<header>
+		<h1><span class="toptitle">テキストファイルから様々なダイアグラムを作成する - <span>GraphViz 編</span></span><br />エッジ</h1>
+	</header>
+	<section>
+		<h2>GraphViz のエッジ</h2>
+		<p>ノードの項で説明したように GraphViz の図はノードとエッジで構成されています。下の図をもう一度見てください。</p>
+		<figure>
+			<a href="images/nodes0001.svg" target="_blank"><img class="figure" width="256" src="images/nodes0001.svg"></a>
+			<figcaption>
+				<a href="images/nodes0001.gv" target="_blank">ソースファイル</a>
+			</figcaption>
+		</figure>
+		<p>上図の「黄門様ご一行」と書かれた八角形と「悪代官's」と書かれた長方形がノードだったのでしたね。また「この紋所が目に入らぬか！！」と書かれた矢印が今回お話しするエッジなのでした。</p>
+		<p>GraphViz は以下のエッジを描くことができます。</p>
+		<figure>
+			<a href="images/edges0001.svg" target="_blank"><img class="figure" width="100%" src="images/edges0001.svg"></a>
+			<figcaption>
+				<a href="images/edges0001.gv" target="_blank">ソースファイル</a>
+			</figcaption>
+		</figure>
+		<p>エッジの書き方は以下のように書きます。</p>
+		<blockquote class="code">
+<pre><code>node1_ID -> node2_ID [label="表示文字列", arrowhead=エッジ先端形状];</code></pre>
+		</blockquote>
+		<p>この書き方の場合 node1_ID のノードから node2_ID のノードに &quot;エッジ先端形状&quot; のエッジが引かれ、ラベルとして &quot;表示文字列&quot; という文字列が描かれるといった具合です。</p>
+		<p>例えば kakusan というノード ID のノードから akudaikan というノード ID のノードに「控えおろう！！」と書かれた矢印を引くには以下のように書きます。</p>
+		<blockquote class="code">
+<pre><code>kakusan -> akudaikan [label="控えおろう！！", arrowhead=normal];</code></pre>
+		</blockquote>
+		<p>もし描きたいエッジの arrowhead が normal でラベルが不要な場合だと、もっと簡単にソースファイルを書くことができます。</p>
+		<blockquote class="code">
+<pre><code>digraph example {
+	kakusan -> akudaikan
+}</code></pre>
+		</blockquote>
+		<p>生成されるダイアグラムは下図のようになります。</p>
+		<figure>
+			<a href="images/edges0002.svg" target="_blank"><img class="figure" width="256" src="images/edges0002.svg"></a>
+			<figcaption>
+				<a href="images/edges0002.gv" target="_blank">ソースファイル</a>
+			</figcaption>
+		</figure>
+		<p>ノードにも何も指定していないので、ラベルにノード ID がそのまま表示され、形状もデフォルトの楕円で表示されています。</p>
+		<p>エッジの場合も線種や文字色を変えたりできます。その方法についても後述します。</p>
+	</section>
+	<footer>
+		<hr />
+		<a href="../index.html">戻る</a>
+	</footer>
+</body>
+</html>
+<!--
+vim: ts=2 sw=2 noet
+-->
