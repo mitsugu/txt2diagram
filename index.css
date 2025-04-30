@@ -38,7 +38,8 @@ p {
   text-align:justify;
   text-indent:1em;
 }
-p.no-indent {
+p.no-indent,
+p.noindent {
   text-indent:0em;
 }
 a.external:after {

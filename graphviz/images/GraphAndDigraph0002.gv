@@ -1,0 +1,3 @@
+digraph example {
+	me -> you [label="&nbsp;You, my love.\l&nbsp;🌹Please recieve this."]
+}

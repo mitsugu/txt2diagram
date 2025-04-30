@@ -1,0 +1,3 @@
+graph example {
+	me -- you [label="&nbsp;very good friends"]
+}

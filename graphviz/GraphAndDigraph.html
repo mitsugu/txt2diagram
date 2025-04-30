@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# twitter: http://ogp.me/ns/twitter#">
+	<meta charset="UTF-8">
+	<title>テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - graph と digraph</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="canonical" href="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+
+	<meta name="title" content="テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - graph と digraph">
+	<meta name="description" content="GraphViz のgraph と digraph">
+	<meta name="keywords" content="GraphViz">
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - graph と digraph">
+	<meta property="og:description" content="GraphViz のgraph と digraph">
+	<meta property="og:url" content="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+	<meta property="og:site_name" content="テキストファイルから様々なダイアグラムを作成する - GraphViz 編 - graph と digraph">
+	<meta property="og:html" content="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+	<!--
+  <meta property="og:image" content="https://i.imgur.com/jyZiVCY.jpg">
+  <meta property="og:image:width" content="340">
+  <meta property="og:image:height" content="512">
+  -->
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="https://mitsugu.github.io/txt2diagram/graphviz/install.html">
+
+	<link rel="stylesheet" type="text/css" href="../index.css">
+</head>
+<body>
+	<header>
+		<h1><span class="toptitle">テキストファイルから様々なダイアグラムを作成する - <span>GraphViz 編</span></span><br />graph と digraph</h1>
+	</header>
+	<section>
+		<h2>GraphViz のgraph と digraph</h2>
+		<p>これまでに GraphViz のダイアグラムはノードとエッジでできているというお話をしてきました。</p>
+		<p>ノードとエッジを描くためのソースも紹介してきましたが、それらのソースに</p>
+		<blockquote class="code">
+<pre><code>graph example {
+	...
+}</code></pre>
+		</blockquote>
+		<p class="noindent">だとか</p>
+		<blockquote class="code">
+<pre><code>digraph example {
+	...
+}</code></pre>
+		</blockquote>
+		<p class="noindent">だとか書かれていることに気が付いた読者もいらっしゃるかもしれません。</p>
+		<p>GraphViz はこれらのブロックに囲まれたテキストをダイアグラムであると解釈します。</p>
+		<p>graph と digraph には以下のような違いがあります。</p>
+		<dl>
+		<dt>graph</dt>
+		<dd>
+			<p>ノードとノードをエッジでつなぐときにエッジの両端に方向はありません。エッジは &quot;--&quot; のように書かなければなりません。たとえば</p>
+			<blockquote class="code">
+<pre><code>graph example {
+	me -- you [label="&amp;nbsp;very good friends"]
+}</code></pre>
+			</blockquote>
+			<p class="noindent">といった場合は下図が描かれます (&amp;nbsp; はスペースなのですがレイアウト調整のために入れています)。</p>
+			<figure>
+				<a href="images/GraphAndDigraph0001.svg" target="_blank"><img class="figure" width="128" src="images/GraphAndDigraph0001.svg"></a>
+				<figcaption>
+					<a href="images/GraphAndDigraph0001.gv" target="_blank">ソースファイル</a>
+				</figcaption>
+			</figure>
+		</dd>
+		<dt>digraph</dt>
+		<dd>
+			<p>ノードとノードをエッジでつなぐときにエッジの両端に方向があります。エッジは &quot;-&gt;&quot; のように書かなければなりません。たとえば</p>
+			<blockquote class="code">
+<pre><code>digraph example {
+	me -> you [label="&amp;nbsp;You, my love.\l&amp;nbsp;🌹Please recieve this."]
+}</code></pre>
+			</blockquote>
+			<p class="noindent">といった場合は下図が描かれます (&amp;nbsp; はやはりレイアウト調整のために入れています。また \l は左寄せ兼改行です)。</p>
+			<figure>
+				<a href="images/GraphAndDigraph0002.svg" target="_blank"><img class="figure" width="256" src="images/GraphAndDigraph0002.svg"></a>
+				<figcaption>
+					<a href="images/GraphAndDigraph0002.gv" target="_blank">ソースファイル</a>
+				</figcaption>
+			</figure>
+		</dd>
+		</dl>
+	</section>
+	<footer>
+		<hr />
+		<a href="../index.html">戻る</a>
+	</footer>
+</body>
+</html>
+<!--
+vim: ts=2 sw=2 noet
+-->
